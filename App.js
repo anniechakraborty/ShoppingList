@@ -29,6 +29,13 @@ const App = () => {
       text: 'Juice'
     },
   ]);
+
+  const deleteItem = (id) => {
+    setItems(prevItems => {
+      return prevItems.filter(item => item.id !== id);
+    });
+  };
+
   return (
     <View style={styles.container}>
       <Header title='Shopping List'/>
@@ -37,7 +44,7 @@ const App = () => {
         renderItem={
           // passing {item} in the call back function call will access every element in the array accessed by the data prop above
           ({item})=>(
-            <ListItem item={item}/>
+            <ListItem item={item} deleteItem={deleteItem}/>
           )
         }
       />
