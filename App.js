@@ -3,7 +3,8 @@ import {
   View,
   Text,
   StyleSheet,
-  FlatList
+  FlatList,
+  Alert
 } from 'react-native';
 // import { v4 as uuidv4 } from 'uuid';
 
@@ -38,12 +39,17 @@ const App = () => {
   };
 
   const addItem = (item) => {
-    setItems(prevItems =>{
-      return [...prevItems, {
-        id : prevItems.length + 1,
-        text : item
-      }];
-    })
+    if(item === ''){
+      Alert.alert('Error', 'Please enter a valid item', {text : 'Ok'});
+    }
+    else {
+      setItems(prevItems =>{
+        return [...prevItems, {
+          id : prevItems.length + 1,
+          text : item
+        }];
+      });
+    }
   }
 
   return (

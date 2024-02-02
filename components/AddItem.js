@@ -4,7 +4,8 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    Alert
 } from 'react-native';
 
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
@@ -18,6 +19,13 @@ const AddItem = (props) => {
             <TextInput placeholder="Add item" style={styles.input} onChangeText={onChange}/>
             <TouchableOpacity style={styles.btn} onPress={
                 ()=> {
+                    // if(text === ''){
+                    //     Alert.alert('Error', 'Please enter a valid item', {text : 'Ok'});
+                    // }
+                    // else{
+                    //     props.addItem(text);
+                    //     setText('');
+                    // }
                     props.addItem(text);
                     setText('');
                 }
