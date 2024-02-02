@@ -9,6 +9,7 @@ import {
 
 import Header from "./components/Header";
 import ListItem from "./components/List_Item";
+import AddItem from "./components/AddItem";
 
 const App = () => {
   const [items, setItems] = useState([
@@ -39,6 +40,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Header title='Shopping List'/>
+      <AddItem/>
       <FlatList 
         data={items}
         renderItem={
