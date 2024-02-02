@@ -37,10 +37,19 @@ const App = () => {
     });
   };
 
+  const addItem = (item) => {
+    setItems(prevItems =>{
+      return [...prevItems, {
+        id : prevItems.length + 1,
+        text : item
+      }];
+    })
+  }
+
   return (
     <View style={styles.container}>
       <Header title='Shopping List'/>
-      <AddItem/>
+      <AddItem addItem={addItem} />
       <FlatList 
         data={items}
         renderItem={
