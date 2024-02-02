@@ -1,21 +1,27 @@
 import React from "react";
 import { 
   View,
-  Text
+  Text,
+  StyleSheet
 } from 'react-native';
 
 const App = () => {
   return (
-    <View style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      <Text style={{
-        fontSize: 30
-      }}>Hello</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container : {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  text : {
+    fontSize: 40
+  }
+});
 
 export default App;
